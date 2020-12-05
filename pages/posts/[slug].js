@@ -26,22 +26,24 @@ export default function PostPage({ source, frontMatter }) {
   return (
     <Layout>
       <header>
-        <nav>
+        <Box as="nav" mt={4} mx={8}>
           <Link href="/">
             <a>👈 Go back home</a>
           </Link>
-        </nav>
+        </Box>
       </header>
-      <Box mb="0">
+      <Box mb="0" mt={4} px={12}>
         <Text as="h1">{frontMatter.title}</Text>
         {frontMatter.description && (
-          <Box as="p" opacity="0.6">
+          <Box as="p" opacity="0.6" mb={8}>
             {frontMatter.description}
           </Box>
         )}
       </Box>
       <main>
-        <Stack>{content}</Stack>
+        <Stack spacing={4} px={12}>
+          {content}
+        </Stack>
       </main>
     </Layout>
   );
