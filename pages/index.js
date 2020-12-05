@@ -5,6 +5,7 @@ import Link from "next/link";
 import path from "path";
 import Layout from "../components/Layout";
 import { postFilePaths, POSTS_PATH } from "../utils/mdxUtils";
+import Logo from "../public/logo-black.svg";
 
 export default function Index({ posts }) {
   return (
@@ -21,6 +22,7 @@ export default function Index({ posts }) {
             <Link
               as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`}
               href={`/posts/[slug]`}
+              <Logo />
             >
               <a>{post.data.title}</a>
             </Link>
