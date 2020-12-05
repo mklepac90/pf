@@ -8,9 +8,6 @@ const theme = extendTheme({
         margin: 0,
         padding: 0,
       },
-      body: {
-        backgroundColor: "#ffe7aa",
-      },
       a: {
         _hover: {
           textDecoration: "underline",
@@ -25,7 +22,15 @@ const theme = extendTheme({
       h3: {
         fontSize: "xl",
       },
+      img: {
+        display: "block",
+        width: "100%",
+      },
     },
+  },
+  fonts: {
+    header: "Archivo Black, sans-serif",
+    body: "Archivo Black, sans-serif",
   },
 });
 
