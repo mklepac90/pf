@@ -37,16 +37,26 @@ export default function PostPage({ source, frontMatter }) {
       <Box mb="0" mt={4} px={12}>
         <Text as="h1">{frontMatter.title}</Text>
         {frontMatter.description && (
-          <Box as="p" opacity="0.6" mb={8}>
+          <Box as="p" opacity="0.6" mb={6}>
             {frontMatter.description}
           </Box>
         )}
       </Box>
       <main>
-        <Stack spacing={4} px={12}>
+        <Stack spacing={4} px={12} mb={8}>
           {content}
         </Stack>
       </main>
+      <footer>
+        <Box
+          fontSize="0.7em"
+          textAlign="center"
+          background="black"
+          color="white"
+        >
+          Made with ♥️ in Toronto by Yesh and Preethika Yendamuri
+        </Box>
+      </footer>
     </Layout>
   );
 }

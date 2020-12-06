@@ -94,9 +94,16 @@ export default function Index({ posts }) {
             </Box>
           </Grid>
         </Box>
-        <Box fontSize="0.7em" textAlign="center">
-          Made in Toronto
-        </Box>
+        <footer>
+          <Box
+            fontSize="0.7em"
+            textAlign="center"
+            background="black"
+            color="white"
+          >
+            Made with ♥️ in Toronto by Yesh and Preethika Yendamuri
+          </Box>
+        </footer>
       </Grid>
     </Layout>
   );
