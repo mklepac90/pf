@@ -1,19 +1,11 @@
-import {
-  Box,
-  Divider,
-  Flex,
-  Grid,
-  List,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
-import fs from "fs";
-import matter from "gray-matter";
-import Link from "next/link";
-import path from "path";
-import Layout from "../components/Layout";
-import { postFilePaths, POSTS_PATH } from "../utils/mdxUtils";
-import Logo from "../public/logo.svg";
+import { Box, Flex, Grid, Text } from '@chakra-ui/react';
+import fs from 'fs';
+import matter from 'gray-matter';
+import Link from 'next/link';
+import path from 'path';
+import Layout from '../components/Layout';
+import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils';
+import Logo from '../public/logo.svg';
 
 export default function Index({ posts }) {
   return (
@@ -29,7 +21,7 @@ export default function Index({ posts }) {
               color="white"
               fontSize="0.75rem"
               textAlign="center"
-              maxW={["40%", "30%"]}
+              maxW={['40%', '30%']}
             >
               We made the mistakes, so you don't have to We made the mistakes,
               so you don't have to We made the mistakes, so you don't have to We

@@ -1,15 +1,15 @@
-import { Alert, Box, Divider, HStack, Stack, Text } from "@chakra-ui/react";
-import fs from "fs";
-import matter from "gray-matter";
-import hydrate from "next-mdx-remote/hydrate";
-import renderToString from "next-mdx-remote/render-to-string";
-import Head from "next/head";
-import Link from "next/link";
-import path from "path";
-import CustomLink from "../../components/CustomLink";
-import Layout from "../../components/Layout";
-import Callout from "../../components/Callout";
-import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
+import { Alert, Box, Divider, HStack, Stack, Text } from '@chakra-ui/react';
+import fs from 'fs';
+import matter from 'gray-matter';
+import hydrate from 'next-mdx-remote/hydrate';
+import renderToString from 'next-mdx-remote/render-to-string';
+import Head from 'next/head';
+import Link from 'next/link';
+import path from 'path';
+import CustomLink from '../../components/CustomLink';
+import Layout from '../../components/Layout';
+import Callout from '../../components/Callout';
+import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
 
 const components = {
   a: CustomLink,
@@ -84,7 +84,7 @@ export const getStaticProps = async ({ params }) => {
 export const getStaticPaths = async () => {
   const paths = postFilePaths
     // Remove file extensions for page paths
-    .map((path) => path.replace(/\.mdx?$/, ""))
+    .map((path) => path.replace(/\.mdx?$/, ''))
     // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }));
 
