@@ -8,6 +8,7 @@ import Link from "next/link";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
 import Layout from "../../components/Layout";
+import Callout from "../../components/Callout";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
 // Custom components/renderers to pass to MDX.
@@ -19,6 +20,7 @@ const components = {
   Head,
   Alert,
   Divider,
+  Callout,
 };
 
 export default function PostPage({ source, frontMatter }) {
