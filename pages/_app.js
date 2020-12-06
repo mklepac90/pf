@@ -1,5 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { ChakraProvider, CSSReset, extendTheme } from "@chakra-ui/react";
+import SEO from "../next-seo.config";
+import { DefaultSeo } from "next-seo";
 
 const theme = extendTheme({
   styles: {
@@ -48,6 +50,7 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider theme={theme}>
       <ThemeProvider theme={theme}>
         <>
+          <DefaultSeo {...SEO} />
           <Component {...pageProps} />
         </>
       </ThemeProvider>
