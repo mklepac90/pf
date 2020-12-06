@@ -6,7 +6,6 @@ const StyledCallout = styled.aside`
   padding: 24px 32px;
   font-size: 17px;
   margin-top: 30px;
-  margin-bottom: 35px;
   border-left-width: 3px;
   border-left-style: solid;
   border-radius: 6px 6px 6px 3px;
