@@ -38,7 +38,7 @@ export default function Index({ posts }) {
             </Text>
           </Flex>
         </Box>
-        <Box background="white">
+        <Box background="white" mb={12}>
           <Grid
             gridTemplateColumns="repeat(auto-fit, minmax(240px, 400px)) minmax(240px, 400px)"
             gridRowGap="2rem"
