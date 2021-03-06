@@ -1,4 +1,4 @@
-import { Alert, Box, Divider, HStack, Stack, Text } from '@chakra-ui/react';
+import { Alert, Box, Divider, Flex, Stack, Text } from '@chakra-ui/react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import hydrate from 'next-mdx-remote/hydrate';
@@ -10,6 +10,7 @@ import CustomLink from '../../components/CustomLink';
 import Layout from '../../components/Layout';
 import Callout from '../../components/Callout';
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
+import Nav from '../../components/Nav';
 
 const components = {
   a: CustomLink,
@@ -23,36 +24,22 @@ export default function PostPage({ source, frontMatter }) {
   const content = hydrate(source, { components });
   return (
     <Layout>
-      <header>
-        <Box as="nav" mt={4} mx={8}>
-          <Link href="/">
-            <a>👈 Go back home</a>
-          </Link>
+      <Flex>
+        <Nav />
+        <Box mb="0" mt={4} px={12}>
+          <Text as="h1">{frontMatter.title}</Text>
+          {frontMatter.description && (
+            <Box as="p" opacity="0.6" mb={6}>
+              {frontMatter.description}
+            </Box>
+          )}
+          <main>
+            <Stack spacing={4} mb={8}>
+              {content}
+            </Stack>
+          </main>
         </Box>
-      </header>
-      <Box mb="0" mt={4} px={12}>
-        <Text as="h1">{frontMatter.title}</Text>
-        {frontMatter.description && (
-          <Box as="p" opacity="0.6" mb={6}>
-            {frontMatter.description}
-          </Box>
-        )}
-      </Box>
-      <main>
-        <Stack spacing={4} px={12} mb={8}>
-          {content}
-        </Stack>
-      </main>
-      <footer>
-        <Box
-          fontSize="0.7em"
-          textAlign="center"
-          background="black"
-          color="white"
-        >
-          Made with ♥️ in Toronto by Yesh and Preethika Yendamuri
-        </Box>
-      </footer>
+      </Flex>
     </Layout>
   );
 }
