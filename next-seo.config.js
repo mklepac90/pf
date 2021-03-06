@@ -1,14 +1,13 @@
-const title = 'Immigrant Handbook';
-const description =
-  'Your all in one guide to knowing the ins and outs of starting a new life in Canada.';
+const title = 'Yesh Yendamuri';
+const description = 'personal website of yesh yendamuri';
 const SEO = {
   title,
   description,
-  canonical: 'https://immigrant-handbook.vercel.app/',
+  canonical: 'https://yesh.vercel.app/',
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://immigrant-handbook.vercel.app/',
+    url: 'https://yesh.vercel.app/',
     title,
     description,
     images: [
