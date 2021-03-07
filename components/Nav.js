@@ -7,9 +7,11 @@ import { Flex, Icon, Text, useColorMode } from '@chakra-ui/react';
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex as="nav" flexDir="column" pr={8}>
+    <Flex as="nav" flexDir="column" pr={8} pl={[2, 0]}>
       <Text fontWeight="bold" pb={2}>
-        yesh yendamuri
+        <Link href="/">
+          <a>yesh yendamuri</a>
+        </Link>
       </Text>
       <Link href="/">
         <a>writing</a>

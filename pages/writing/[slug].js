@@ -24,8 +24,9 @@ export default function PostPage({ source, frontMatter }) {
   const content = hydrate(source, { components });
   return (
     <Layout>
-      <Flex>
+      <Flex flexDir={['column', 'row']}>
         <Nav />
+        <Box borderBottom="1px dotted #000" paddingBottom="20px" />
         <Box mb="0" mt={4} px={12}>
           <Text as="h1">{frontMatter.title}</Text>
           {frontMatter.description && (

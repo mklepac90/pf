@@ -10,9 +10,10 @@ import { readingFilePaths, READING_PATH } from '../utils/mdxUtils';
 export default function Index({ posts }) {
   return (
     <Layout>
-      <Flex>
+      <Flex flexDir={['column', 'row']}>
         <Nav />
-        <Flex flexDir="column">
+        <Box borderBottom="1px dotted #000" paddingBottom="20px" />
+        <Flex flexDir="column" pt={[4, 0]} pl={[2, 0]}>
           {posts.map((post) => (
             <>
               <Link href={`reading/${post.data.slug}`}>
