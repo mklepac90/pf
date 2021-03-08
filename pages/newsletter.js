@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import Link from 'next/link';
@@ -17,7 +17,9 @@ export default function Index({ posts }) {
           {posts.map((post) => (
             <>
               <Link href={`newsletter/${post.data.slug}`}>
-                <a>{post.data.title}</a>
+                <a>
+                  <Text fontWeight="bold">{post.data.title}</Text>
+                </a>
               </Link>
             </>
           ))}

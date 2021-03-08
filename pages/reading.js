@@ -17,7 +17,9 @@ export default function Index({ posts }) {
           {posts.map((post) => (
             <>
               <Link href={`reading/${post.data.slug}`}>
-                <a>{post.data.title}</a>
+                <a>
+                  <Text fontWeight="bold">{post.data.title}</Text>
+                </a>
               </Link>
             </>
           ))}

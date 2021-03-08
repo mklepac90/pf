@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Grid, Text } from '@chakra-ui/react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import Link from 'next/link';
@@ -15,11 +15,14 @@ export default function Index({ posts }) {
         <Box borderBottom="1px dotted #000" paddingBottom="20px" />
         <Flex flexDir="column" pt={[4, 0]} pl={[2, 0]}>
           {posts.map((post) => (
-            <>
+            <Grid gridTemplateColumns="1fr 1fr">
               <Link href={`writing/${post.data.slug}`}>
-                <a>{post.data.title}</a>
+                <a>
+                  <Text fontWeight="bold">{post.data.title}</Text>
+                </a>
               </Link>
-            </>
+              <Text ml="5rem">{post.data.pubDate}</Text>
+            </Grid>
           ))}
         </Flex>
       </Flex>
