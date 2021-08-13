@@ -19,7 +19,8 @@ const Nav = () => {
       bgColor={bgColor}
       color={fontColor}
       fontSize="xl"
-      py={10}
+      h="10vh"
+      alignItems="center"
     >
       <Text fontWeight="bold" pb={2}>
         <Link href="/">

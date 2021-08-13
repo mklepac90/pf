@@ -3,7 +3,7 @@ import Nav from './Nav';
 
 export default function Layout({ children }) {
   return (
-    <Box w="100%" h="100%">
+    <Box w="100vw" h="90vh">
       <Nav />
       {children}
     </Box>

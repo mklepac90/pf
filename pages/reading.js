@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Center, Flex, Text } from '@chakra-ui/react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import Link from 'next/link';
@@ -7,17 +7,19 @@ import { readingFilePaths, READING_PATH } from '../utils/mdxUtils';
 
 export default function Reading({ posts }) {
   return (
-    <Flex flexDir="column" pt={[4, 0]} pl={[2, 0]}>
-      {posts.map((post) => (
-        <>
-          <Link href={`reading/${post.data.slug}`}>
-            <a>
-              <Text fontWeight="bold">{post.data.title}</Text>
-            </a>
-          </Link>
-        </>
-      ))}
-    </Flex>
+    <Center h="100%" w="100%">
+      <Flex flexDir="column" pt={[4, 0]} pl={[2, 0]}>
+        {posts.map((post) => (
+          <>
+            <Link href={`reading/${post.data.slug}`}>
+              <a>
+                <Text fontWeight="bold">{post.data.title}</Text>
+              </a>
+            </Link>
+          </>
+        ))}
+      </Flex>
+    </Center>
   );
 }
 
