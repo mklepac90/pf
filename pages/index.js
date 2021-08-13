@@ -9,16 +9,18 @@ export default function Index({ posts }) {
   return (
     <Center h="100%" w="100%">
       <Flex flexDir="column" pt={[4, 0]} pl={[2, 0]}>
-        {posts.map((post) => (
-          <Grid gridTemplateColumns="1fr 1fr">
-            <Link href={`writing/${post.data.slug}`}>
-              <a>
-                <Text fontWeight="bold">{post.data.title}</Text>
-              </a>
-            </Link>
-            <Text ml="5rem">{post.data.pubDate}</Text>
-          </Grid>
-        ))}
+        <Grid gridTemplateColumns="1fr 1fr">
+          {posts.map((post, index) => (
+            <>
+              <Link href={`writing/${post.data.slug}`} key={index}>
+                <a>
+                  <Text fontWeight="bold">{post.data.title}</Text>
+                </a>
+              </Link>
+              <Text ml="5rem">{post.data.pubDate}</Text>
+            </>
+          ))}
+        </Grid>
       </Flex>
     </Center>
   );
