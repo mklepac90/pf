@@ -6,8 +6,21 @@ import { Flex, Icon, Text, useColorMode } from '@chakra-ui/react';
 
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const bgColor = colorMode === 'dark' ? 'white' : 'black';
+  const fontColor = colorMode === 'dark' ? 'black' : 'white';
+
   return (
-    <Flex as="nav" flexDir="column" pr={8} pl={[2, 0]}>
+    <Flex
+      as="nav"
+      flexDir="row"
+      w="100%"
+      justify="space-evenly"
+      bgColor={bgColor}
+      color={fontColor}
+      fontSize="xl"
+      py={10}
+    >
       <Text fontWeight="bold" pb={2}>
         <Link href="/">
           <a>michael klepac</a>

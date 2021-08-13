@@ -1,32 +1,24 @@
-import { Box, Flex, Grid, Text } from '@chakra-ui/react';
+import { Flex, Grid, Text } from '@chakra-ui/react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import Link from 'next/link';
 import path from 'path';
-import Layout from '../components/Layout';
-import Nav from '../components/Nav';
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils';
 
 export default function Index({ posts }) {
   return (
-    <Layout>
-      <Flex flexDir={['column', 'row']}>
-        <Nav />
-        <Box borderBottom="1px dotted #000" paddingBottom="20px" />
-        <Flex flexDir="column" pt={[4, 0]} pl={[2, 0]}>
-          {posts.map((post) => (
-            <Grid gridTemplateColumns="1fr 1fr">
-              <Link href={`writing/${post.data.slug}`}>
-                <a>
-                  <Text fontWeight="bold">{post.data.title}</Text>
-                </a>
-              </Link>
-              <Text ml="5rem">{post.data.pubDate}</Text>
-            </Grid>
-          ))}
-        </Flex>
-      </Flex>
-    </Layout>
+    <Flex flexDir="column" pt={[4, 0]} pl={[2, 0]}>
+      {posts.map((post) => (
+        <Grid gridTemplateColumns="1fr 1fr">
+          <Link href={`writing/${post.data.slug}`}>
+            <a>
+              <Text fontWeight="bold">{post.data.title}</Text>
+            </a>
+          </Link>
+          <Text ml="5rem">{post.data.pubDate}</Text>
+        </Grid>
+      ))}
+    </Flex>
   );
 }
 

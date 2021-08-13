@@ -6,10 +6,8 @@ import renderToString from 'next-mdx-remote/render-to-string';
 import Head from 'next/head';
 import path from 'path';
 import CustomLink from '../../components/CustomLink';
-import Layout from '../../components/Layout';
 import Callout from '../../components/Callout';
 import { readingFilePaths, READING_PATH } from '../../utils/mdxUtils';
-import Nav from '../../components/Nav';
 
 const components = {
   a: CustomLink,
@@ -22,25 +20,21 @@ const components = {
 export default function PostPage({ source, frontMatter }) {
   const content = hydrate(source, { components });
   return (
-    <Layout>
-      <Flex flexDir={['column', 'row']}>
-        <Nav />
-        <Box borderBottom="1px dotted #000" paddingBottom="20px" />
-        <Box mb="0" mt={4} px={12}>
-          <Text as="h1">{frontMatter.title}</Text>
-          {frontMatter.description && (
-            <Box as="p" opacity="0.6" mb={6}>
-              {frontMatter.description}
-            </Box>
-          )}
-          <main>
-            <Stack spacing={4} mb={8}>
-              {content}
-            </Stack>
-          </main>
-        </Box>
-      </Flex>
-    </Layout>
+    <Flex flexDir={['column', 'row']}>
+      <Box mb="0" mt={4} px={12}>
+        <Text as="h1">{frontMatter.title}</Text>
+        {frontMatter.description && (
+          <Box as="p" opacity="0.6" mb={6}>
+            {frontMatter.description}
+          </Box>
+        )}
+        <main>
+          <Stack spacing={4} mb={8}>
+            {content}
+          </Stack>
+        </main>
+      </Box>
+    </Flex>
   );
 }
 

@@ -1,8 +1,10 @@
-import { Box, Grid } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import Nav from './Nav';
 
 export default function Layout({ children }) {
   return (
-    <Box maxW="640px" margin="auto" py={8}>
+    <Box w="100%" h="100%">
+      <Nav />
       {children}
     </Box>
   );
