@@ -7,7 +7,7 @@ import { Flex, Icon, Text, useColorMode } from '@chakra-ui/react';
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const bgColor = colorMode === 'dark' ? 'white' : 'black';
+  const bgColor = colorMode === 'dark' ? 'white' : 'gray.800';
   const fontColor = colorMode === 'dark' ? 'black' : 'white';
 
   return (
