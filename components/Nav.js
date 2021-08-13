@@ -10,7 +10,7 @@ const Nav = () => {
     <Flex as="nav" flexDir="column" pr={8} pl={[2, 0]}>
       <Text fontWeight="bold" pb={2}>
         <Link href="/">
-          <a>yesh yendamuri</a>
+          <a>michael klepac</a>
         </Link>
       </Text>
       <Link href="/">
