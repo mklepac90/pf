@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
-import { Flex, Icon, Text, useColorMode } from '@chakra-ui/react';
+import { Flex, IconButton, Text, useColorMode } from '@chakra-ui/react';
 
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -28,18 +28,32 @@ const Nav = () => {
         </Link>
       </Text>
       <Link href="/">
-        <a>writing</a>
-      </Link>
-      <Link href="/newsletter">
-        <a>newsletter</a>
+        <a>blog</a>
       </Link>
       <Link href="/reading">
-        <a>reading</a>
+        <a>bookshelf</a>
+      </Link>
+      <Link href="/newsletter">
+        <a>about</a>
       </Link>
       {colorMode === 'dark' ? (
-        <Icon my={2} onClick={toggleColorMode} as={FaSun} />
+        <IconButton
+          variant="ghost"
+          onClick={toggleColorMode}
+          icon={<FaSun />}
+          aria-label="Switch to bright mode"
+          size="lg"
+          _hover={{ bgColor: null, color: 'orange' }}
+        />
       ) : (
-        <Icon my={1} onClick={toggleColorMode} as={FaMoon} />
+        <IconButton
+          variant="ghost"
+          onClick={toggleColorMode}
+          icon={<FaMoon />}
+          aria-label="Switch to dark mode"
+          size="lg"
+          _hover={{ bgColor: null, color: 'purple' }}
+        />
       )}
     </Flex>
   );

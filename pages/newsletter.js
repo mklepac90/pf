@@ -8,15 +8,13 @@ import { newsletterFilePaths, NEWSLETTER_PATH } from '../utils/mdxUtils';
 export default function Newsletter({ posts }) {
   return (
     <Center h="100%" w="100%">
-      <Flex flexDir="column" pt={[4, 0]} pl={[2, 0]}>
-        {posts.map((post) => (
-          <>
-            <Link href={`newsletter/${post.data.slug}`}>
-              <a>
-                <Text fontWeight="bold">{post.data.title}</Text>
-              </a>
-            </Link>
-          </>
+      <Flex flexDir="column">
+        {posts.map((post, index) => (
+          <Link key={index} href={`/newsletter/${post.data.slug}`}>
+            <a>
+              <Text fontWeight="bold">{post.data.title}</Text>
+            </a>
+          </Link>
         ))}
       </Flex>
     </Center>
