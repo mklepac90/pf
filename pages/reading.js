@@ -1,4 +1,4 @@
-import { Center, Flex, Text } from '@chakra-ui/react';
+import { Center, Flex, Text, Stack, Box } from '@chakra-ui/react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import Link from 'next/link';
@@ -10,11 +10,16 @@ export default function Reading({ posts }) {
     <Center h="100%" w="100%">
       <Flex flexDir="column">
         {posts.map((post, index) => (
-          <Link key={index} href={`/reading/${post.data.slug}`}>
-            <a>
-              <Text fontWeight="bold">{post.data.title}</Text>
-            </a>
-          </Link>
+          <Box key={index}>
+            <Stack direction="row" spacing={20}>
+              <Link href={`/reading/${post.data.slug}`}>
+                <a>
+                  <Text fontWeight="bold">{post.data.title}</Text>
+                </a>
+              </Link>
+              <Text>{post.data.status}</Text>
+            </Stack>
+          </Box>
         ))}
       </Flex>
     </Center>

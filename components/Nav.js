@@ -33,7 +33,7 @@ const Nav = () => {
       <Link href="/reading">
         <a>bookshelf</a>
       </Link>
-      <Link href="/newsletter">
+      <Link href="/about">
         <a>about</a>
       </Link>
       {colorMode === 'dark' ? (

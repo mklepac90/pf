@@ -17,7 +17,7 @@ export default function Index({ posts }) {
                   <Text fontWeight="bold">{post.data.title}</Text>
                 </a>
               </Link>
-              <Text ml="5rem">{post.data.pubDate}</Text>
+              <Text>{post.data.pubDate}</Text>
             </Stack>
           </Box>
         ))}
