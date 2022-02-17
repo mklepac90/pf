@@ -21,23 +21,22 @@ const components = {
 
 export default function PostPage({ source, frontMatter }) {
   const content = hydrate(source, { components });
-  return (
-    <Flex flexDir={['column', 'row']}>
-      <Box mb="0" mt={4} px={12}>
-        <Text as="h1">{frontMatter.title}</Text>
-        {frontMatter.description && (
-          <Box as="p" opacity="0.6" mb={6}>
-            {frontMatter.description}
-          </Box>
-        )}
-        <main>
-          <Stack spacing={4} mb={8}>
-            {content}
-          </Stack>
-        </main>
-      </Box>
-    </Flex>
-  );
+  return null;
+  // <Flex flexDir={['column', 'row']}>
+  //   <Box mb="0" mt={4} px={12}>
+  //     <Text as="h1">{frontMatter.title}</Text>
+  //     {frontMatter.description && (
+  //       <Box as="p" opacity="0.6" mb={6}>
+  //         {frontMatter.description}
+  //       </Box>
+  //     )}
+  //     <main>
+  //       <Stack spacing={4} mb={8}>
+  //         {content}
+  //       </Stack>
+  //     </main>
+  //   </Box>
+  // </Flex>
 }
 
 export const getStaticProps = async ({ params }) => {

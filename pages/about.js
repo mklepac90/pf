@@ -40,67 +40,66 @@ const CategoryDescription = ({ category }) => {
 const About = () => {
   const [state, setState] = useState(defaultState);
 
-  return (
-    <Box w="100%" h="100%">
-      <Stack h="100%" w="100%" spacing={14} justify="center" align="center">
-        <Fade in={state.who}>
-          <Button
-            {...styles.who}
-            onClick={() =>
-              setState((state) => {
-                return {
-                  ...state,
-                  whoCategories: !state.whoCategories,
-                  selectedCategory: '',
-                };
-              })
-            }
-          >
-            Who am I?
-          </Button>
-        </Fade>
+  return null;
+  // <Box w="100%" h="100%">
+  //   <Stack h="100%" w="100%" spacing={14} justify="center" align="center">
+  //     <Fade in={state.who}>
+  //       <Button
+  //         {...styles.who}
+  //         onClick={() =>
+  //           setState((state) => {
+  //             return {
+  //               ...state,
+  //               whoCategories: !state.whoCategories,
+  //               selectedCategory: '',
+  //             };
+  //           })
+  //         }
+  //       >
+  //         Who am I?
+  //       </Button>
+  //     </Fade>
 
-        <ScaleFade in={state.whoCategories} initialScale={0.5}>
-          <Stack direction="row" spacing={32}>
-            <Button
-              {...styles.whoCategories}
-              onClick={() => {
-                setState((state) => {
-                  return { ...state, selectedCategory: 'developer' };
-                });
-              }}
-            >
-              Developer
-            </Button>
-            <Button
-              {...styles.whoCategories}
-              onClick={() => {
-                setState((state) => {
-                  return { ...state, selectedCategory: 'gamer' };
-                });
-              }}
-            >
-              Gamer
-            </Button>
-            <Button
-              {...styles.whoCategories}
-              onClick={() => {
-                setState((state) => {
-                  return { ...state, selectedCategory: 'nerd' };
-                });
-              }}
-            >
-              Nerd
-            </Button>
-          </Stack>
-        </ScaleFade>
+  //     <ScaleFade in={state.whoCategories} initialScale={0.5}>
+  //       <Stack direction="row" spacing={32}>
+  //         <Button
+  //           {...styles.whoCategories}
+  //           onClick={() => {
+  //             setState((state) => {
+  //               return { ...state, selectedCategory: 'developer' };
+  //             });
+  //           }}
+  //         >
+  //           Developer
+  //         </Button>
+  //         <Button
+  //           {...styles.whoCategories}
+  //           onClick={() => {
+  //             setState((state) => {
+  //               return { ...state, selectedCategory: 'gamer' };
+  //             });
+  //           }}
+  //         >
+  //           Gamer
+  //         </Button>
+  //         <Button
+  //           {...styles.whoCategories}
+  //           onClick={() => {
+  //             setState((state) => {
+  //               return { ...state, selectedCategory: 'nerd' };
+  //             });
+  //           }}
+  //         >
+  //           Nerd
+  //         </Button>
+  //       </Stack>
+  //     </ScaleFade>
 
-        <ScaleFade in={state.selectedCategory} initialScale={0.5}>
-          <CategoryDescription category={state.selectedCategory} />
-        </ScaleFade>
-      </Stack>
-    </Box>
-  );
+  //     <ScaleFade in={state.selectedCategory} initialScale={0.5}>
+  //       <CategoryDescription category={state.selectedCategory} />
+  //     </ScaleFade>
+  //   </Stack>
+  // </Box>
 };
 
 export default About;

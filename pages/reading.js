@@ -6,24 +6,23 @@ import path from 'path';
 import { readingFilePaths, READING_PATH } from '../utils/mdxUtils';
 
 export default function Reading({ posts }) {
-  return (
-    <Center h="100%" w="100%">
-      <Flex flexDir="column">
-        {posts.map((post, index) => (
-          <Box key={index}>
-            <Stack direction="row" spacing={20}>
-              <Link href={`/reading/${post.data.slug}`}>
-                <a>
-                  <Text fontWeight="bold">{post.data.title}</Text>
-                </a>
-              </Link>
-              <Text>{post.data.status}</Text>
-            </Stack>
-          </Box>
-        ))}
-      </Flex>
-    </Center>
-  );
+  return null;
+  // <Center h="100%" w="100%">
+  //   <Flex flexDir="column">
+  //     {posts.map((post, index) => (
+  //       <Box key={index}>
+  //         <Stack direction="row" spacing={20}>
+  //           <Link href={`/reading/${post.data.slug}`}>
+  //             <a>
+  //               <Text fontWeight="bold">{post.data.title}</Text>
+  //             </a>
+  //           </Link>
+  //           <Text>{post.data.status}</Text>
+  //         </Stack>
+  //       </Box>
+  //     ))}
+  //   </Flex>
+  // </Center>
 }
 
 export function getStaticProps() {
